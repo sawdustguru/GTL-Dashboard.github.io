@@ -112,9 +112,11 @@
 
         // Load config and update radar iframe
         fetchConfig().then(config => {
+            console.log("Loaded config:", config); // 👈 Logs everything from config.json
             if (config.radarUrl) {
                 const radarFrame = document.getElementById('radar-frame');
                 radarFrame.src = config.radarUrl;
+                console.log("Radar URL set to:", config.radarUrl); // 👈 Confirms radar URL applied
             } else {
                 console.warn("No radarUrl found in config.json");
             }
